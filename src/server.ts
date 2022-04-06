@@ -6,7 +6,7 @@ import { AppSrv } from './app';
 dotenv.config({ path: '.env.development' });
 
 function registerProcessEvents(app: Application) {
-  const port = Number(process.env.PORT) || 3000;
+  const port = Number(process.env.PORT) || 4000;
   const server = app.listen(port, () => {
     console.log(`App running on port ${port}...`);
   });
