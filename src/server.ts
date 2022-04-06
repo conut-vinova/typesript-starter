@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv';
 import express, { Application } from 'express';
 import mongoose from 'mongoose';
 import { AppSrv } from './app';
-dotenv.config({ path: '.env.development' });
+dotenv.config({ path: '.env' });
 
 function registerProcessEvents(app: Application) {
   const port = Number(process.env.PORT) || 4000;
