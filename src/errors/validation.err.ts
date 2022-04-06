@@ -1,21 +1,4 @@
-export class AppError extends Error {
-  public code: number;
-  public error?: Error;
-
-  constructor(code: number, message: string, error?: Error) {
-    super(message);
-
-    this.code = code;
-    this.error = error;
-  }
-
-  public toModel() {
-    return {
-      code: this.code,
-      message: this.message,
-    };
-  }
-}
+import { AppError } from './base.error';
 
 export interface FieldError {
   message: string;
@@ -27,15 +10,16 @@ export class FieldValidationError extends AppError {
   public fields: FieldError[];
 
   constructor(message: string, fields: FieldError[], error?: Error) {
-    super(30001, message, error);
+    super(message, 400);
     this.fields = fields;
   }
 
   public toModel() {
     return {
-      code: this.code,
       message: this.message,
+      status: this.status,
       fields: this.fields,
+      statusCode: this.statusCode,
     };
   }
 }

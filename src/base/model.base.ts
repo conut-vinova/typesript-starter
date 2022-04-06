@@ -5,7 +5,7 @@ const UserSchemaName = 'users';
 
 export interface IModelBase extends Document {
   _id: string;
-  status: StatusCode;
+  status: STATUS_CODE;
   createdBy: string;
   updatedBy: string;
   createdAt: Date;

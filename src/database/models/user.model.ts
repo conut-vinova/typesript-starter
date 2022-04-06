@@ -50,10 +50,7 @@ const UserSchema = new mongoose.Schema(
     facebookToken: String,
     googleToken: String,
     address: {
-      name: {
-        type: String,
-        // required: true
-      },
+      name: String,
       lng: mongoose.Schema.Types.Decimal128,
       lat: mongoose.Schema.Types.Decimal128,
     },

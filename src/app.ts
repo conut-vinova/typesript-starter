@@ -2,10 +2,10 @@ import { globalErrorHandler } from 'base';
 import { ServiceContainer } from 'base/container.base';
 import compression from 'compression';
 import cors from 'cors';
+import { NotFoundError } from 'errors/notFound.err';
 import express, { Application } from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import { AppError } from 'utils';
 import * as brand from './modules/Brand';
 import * as user from './modules/Brand/User';
 
@@ -27,7 +27,7 @@ export class AppSrv {
     user.init(appSrv, this.container);
 
     appSrv.all('*', (req, res, next) => {
-      next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
+      next(new NotFoundError());
     });
     appSrv.use(globalErrorHandler);
   }

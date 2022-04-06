@@ -1,7 +1,9 @@
 import { IRequest } from 'base';
 import { User } from 'database/models';
+import { UnauthorizedError } from 'errors/auth.error';
+import { AppError } from 'errors/base.error';
 import { NextFunction, Response } from 'express';
-import { AppError, STATUS_CODE, verifyToken } from 'utils';
+import { STATUS_CODE, verifyToken } from 'utils';
 
 export const authen = async (req: IRequest, res: Response, next: NextFunction) => {
   const tokenFromClient = req.headers['authorization'];
@@ -10,7 +12,7 @@ export const authen = async (req: IRequest, res: Response, next: NextFunction) =
     try {
       const bearer = tokenFromClient.split(' ');
       if (!bearer[0] || bearer[0].toUpperCase() !== 'BEARER' || !bearer[1]) {
-        return next(new AppError('You are not logged in! Please log in to get access.', 401));
+        return next(new UnauthorizedError());
       }
       const bearerToken = bearer[1];
       const decoded: any = await verifyToken(
@@ -20,14 +22,14 @@ export const authen = async (req: IRequest, res: Response, next: NextFunction) =
       const { id } = decoded;
       const user = await User.findOne({ _id: id, status: STATUS_CODE.ACTIVE });
       if (!user) {
-        return next(new AppError('User not found', 401));
+        return next(new AppError('User not found', 400));
       }
       req.context = decoded;
       next();
     } catch (error) {
-      return next(new AppError('Error', 400));
+      return next(error);
     }
   } else {
-    return next(new AppError('No token provided', 401));
+    return next(new UnauthorizedError());
   }
 };

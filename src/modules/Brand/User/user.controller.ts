@@ -1,6 +1,5 @@
 import { IRequest, successHandler } from 'base';
 import { NextFunction, Response } from 'express';
-import { AppError } from 'utils';
 import { UserManager } from './user.manager';
 import { serializeGetAllUser } from './user.serializer';
 

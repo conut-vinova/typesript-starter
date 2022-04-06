@@ -1,6 +1,6 @@
 import { IRequest } from 'base';
+import { FieldValidationError } from 'errors/validation.err';
 import { NextFunction, Response } from 'express';
-import { FieldValidationError } from 'interfaces/errors.interface';
 import * as Joi from 'joi';
 
 export interface SchemaMap {
@@ -25,8 +25,7 @@ export function validate(schema: SchemaMap) {
           message: f.message,
           path: f.path,
           type: f.type,
-        })),
-        valResult.error
+        }))
       );
     }
 

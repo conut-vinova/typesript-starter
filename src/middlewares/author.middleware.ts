@@ -1,6 +1,6 @@
 import { IRequest } from 'base';
+import { PermissionError } from 'errors/auth.error';
 import { NextFunction, Response } from 'express';
-import { AppError } from 'utils';
 
 export const author = (...permittedRoles: string[]) => {
   return (req: IRequest, res: Response, next: NextFunction) => {
@@ -8,7 +8,7 @@ export const author = (...permittedRoles: string[]) => {
     if (role && permittedRoles.includes(role)) {
       next();
     } else {
-      return next(new AppError('Dont have permission to access this end point', 403));
+      return next(new PermissionError());
     }
   };
 };
