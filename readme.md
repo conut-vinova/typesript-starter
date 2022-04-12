@@ -77,3 +77,11 @@ npm run start:production
 - [mongoose](https://www.npmjs.com/package/mongoose) Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks.
 - [morgan](https://www.npmjs.com/package/morgan) HTTP request logger middleware for node.js
 - [typescript](https://www.npmjs.com/package/typescript) TypeScript is a language for application-scale JavaScript. TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript
+
+### Refercence
+
+[Starter project](https://khalilstemmler.com/blogs/typescript/node-starter-project/)
+
+[Structure Base code](https://github.com/Talento90/typescript-node)
+
+[Architecture](https://edwardthienhoang.wordpress.com/2018/01/18/ports-adapters-architecture/)
