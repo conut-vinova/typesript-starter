@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon",
     "build": "rimraf ./build && tsc",
+    "start:staging": "npm run build && node build/server.js",
     "start:production": "npm run build && node build/server.js"
   },
   "keywords": [],
