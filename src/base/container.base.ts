@@ -1,10 +1,10 @@
-import { Brand, User } from 'database/models';
-import { BrandManager } from 'modules/Brand/brand.manager';
-import { BrandRepository } from 'modules/Brand/brand.repo';
-import { UserManager } from 'modules/Brand/User/user.manager';
-import { UserRepository } from 'modules/Brand/User/user.repo';
-import { Authenticator, JWTAuthenticator } from 'services/authentication';
-import { BCryptHasher, Hasher } from 'services/hasher';
+import { Brand, User } from '@src/database/models';
+import { BrandManager } from '@src/modules/Brand/brand.manager';
+import { BrandRepository } from '@src/modules/Brand/brand.repo';
+import { UserManager } from '@src/modules/Brand/User/user.manager';
+import { UserRepository } from '@src/modules/Brand/User/user.repo';
+import { Authenticator, JWTAuthenticator } from '@src/services/authentication';
+import { BCryptHasher, Hasher } from '@src/services/hasher';
 
 export interface ServiceContainer {
   services: {

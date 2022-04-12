@@ -1,7 +1,7 @@
-import { DetailResponse, GeneralObject, ListResponse } from 'base';
-import { IBrand } from 'database/models';
+import { DetailResponse, GeneralObject, ListResponse } from '@src/base';
+import { IBrand } from '@src/database/models';
+import { STATUS_CODE } from '@src/utils/constants';
 import * as mongoose from 'mongoose';
-import { STATUS_CODE } from 'utils/constants';
 
 export class BrandRepository {
   private readonly model: mongoose.Model<IBrand>;

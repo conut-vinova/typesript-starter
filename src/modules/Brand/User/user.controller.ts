@@ -1,4 +1,4 @@
-import { IRequest, successHandler } from 'base';
+import { IRequest, successHandler } from '@src/base';
 import { NextFunction, Response } from 'express';
 import { UserManager } from './user.manager';
 import { serializeGetAllUser } from './user.serializer';

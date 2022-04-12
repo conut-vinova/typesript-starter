@@ -1,7 +1,10 @@
-import { IUser } from 'database/models';
-import { CustomError } from 'errors/base.error';
+// import { IUser } from 'database/models';
+// import { CustomError } from 'errors/base.error';
+import { IUser } from '@src/database/models';
+import { CustomError } from '@src/errors/base.error';
+import { UserRepository } from '@src/modules/Brand/User/user.repo';
 import * as jwt from 'jsonwebtoken';
-import { UserRepository } from 'modules/Brand/User/user.repo';
+// import { UserRepository } from 'modules/Brand/User/user.repo';
 
 export interface AuthUser {
   id: number;

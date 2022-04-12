@@ -1,11 +1,12 @@
-import { createContainer } from 'base/container.base';
 import * as dotenv from 'dotenv';
 import express, { Application } from 'express';
 import mongoose from 'mongoose';
 import { AppSrv } from './app';
-dotenv.config({ path: '.env' });
+import { createContainer } from './base';
+dotenv.config({ path: __dirname + '/.env' });
 
 function registerProcessEvents(app: Application) {
+  console.log('🚀 ~ file: server.ts ~ line 11 ~ registerProcessEvents ~ process.env', process.env);
   const port = Number(process.env.PORT) || 4000;
   const server = app.listen(port, () => {
     console.log(`App running on port ${port}...`);

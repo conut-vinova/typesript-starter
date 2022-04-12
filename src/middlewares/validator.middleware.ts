@@ -1,5 +1,5 @@
-import { IRequest } from 'base';
-import { FieldValidationError } from 'errors/validation.error';
+import { IRequest } from '@src/base';
+import { FieldValidationError } from '@src/errors/validation.error';
 import { NextFunction, Response } from 'express';
 import * as Joi from 'joi';
 

@@ -1,4 +1,4 @@
-import { GeneralObject } from 'base';
+import { GeneralObject } from '@src/base';
 import { BrandRepository } from './brand.repo';
 import { UserRepository } from './User/user.repo';
 

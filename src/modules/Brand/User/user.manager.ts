@@ -1,7 +1,7 @@
-import { GeneralObject, ListResponse } from 'base';
-import { IUser } from 'database/models';
-import { Authenticator } from 'services/authentication';
-import { Hasher } from 'services/hasher';
+import { GeneralObject, ListResponse } from '@src/base';
+import { IUser } from '@src/database/models';
+import { Authenticator } from '@src/services/authentication';
+import { Hasher } from '@src/services/hasher';
 import { UserRepository } from './user.repo';
 
 export class UserManager {

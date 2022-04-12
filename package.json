@@ -23,7 +23,7 @@
     "nodemon": "^2.0.15",
     "rimraf": "^3.0.2",
     "ts-node": "^10.7.0",
-    "typescript": "^4.6.3"
+    "tsconfig-paths": "^3.14.1"
   },
   "dependencies": {
     "@types/joi": "^14.0.0",
@@ -37,6 +37,7 @@
     "joi": "^14.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.13",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "typescript": "^4.4.4"
   }
 }

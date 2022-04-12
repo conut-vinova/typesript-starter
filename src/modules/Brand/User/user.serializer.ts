@@ -1,5 +1,4 @@
-import { IUser } from 'database/models';
-
+import { IUser } from '@src/database/models';
 export interface IGetAllUserResponse {
   id: string;
   name: string;

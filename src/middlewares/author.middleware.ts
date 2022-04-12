@@ -1,5 +1,5 @@
-import { IRequest } from 'base';
-import { CustomError } from 'errors/base.error';
+import { IRequest } from '@src/base';
+import { CustomError } from '@src/errors/base.error';
 import { NextFunction, Response } from 'express';
 
 export const author = (...permittedRoles: string[]) => {

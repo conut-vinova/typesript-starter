@@ -1,11 +1,10 @@
-import { globalErrorHandler } from 'base';
-import { ServiceContainer } from 'base/container.base';
 import compression from 'compression';
 import cors from 'cors';
-import { CustomError } from 'errors/base.error';
 import express, { Application } from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
+import { globalErrorHandler, ServiceContainer } from './base';
+import { CustomError } from './errors/base.error';
 import * as brand from './modules/Brand';
 import * as user from './modules/Brand/User';
 

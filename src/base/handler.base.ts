@@ -1,4 +1,4 @@
-import { CustomError } from 'errors/base.error';
+import { CustomError } from '@src/errors/base.error';
 import { NextFunction, Response } from 'express';
 import { IRequest, PaginationParams } from './interface.base';
 

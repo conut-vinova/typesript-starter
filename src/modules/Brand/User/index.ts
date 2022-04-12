@@ -1,4 +1,4 @@
-import { ServiceContainer } from 'base/container.base';
+import { ServiceContainer } from '@src/base';
 import express, { Application } from 'express';
 import { UserController } from './user.controller';
 

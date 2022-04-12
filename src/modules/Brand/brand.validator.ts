@@ -1,7 +1,7 @@
 import * as Joi from 'joi';
 
 export const getAllBrand: Joi.SchemaMap = {
-  page: Joi.string().email().trim().optional(),
+  page: Joi.string().trim().optional(),
   perPage: Joi.string().trim().optional(),
   chainId: Joi.string().optional(),
   brandId: Joi.string().optional(),

@@ -1,4 +1,4 @@
-import { IRequest, successHandler } from 'base';
+import { IRequest, successHandler } from '@src/base';
 import { NextFunction, Response } from 'express';
 import { BrandManager } from './brand.manager';
 import { serializeGetAllBrand } from './brand.serializer';

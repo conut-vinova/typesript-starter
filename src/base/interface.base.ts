@@ -1,4 +1,4 @@
-import { IUser } from 'database/models';
+import { IUser } from '@src/database/models';
 import { Request } from 'express';
 
 export interface PaginationParams {

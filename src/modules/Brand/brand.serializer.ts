@@ -1,4 +1,4 @@
-import { IBrand } from 'database/models';
+import { IBrand } from '@src/database/models';
 
 export interface IGetALlBrandRespone {
   id: string;

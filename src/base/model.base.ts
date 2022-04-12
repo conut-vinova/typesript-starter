@@ -1,5 +1,5 @@
+import { STATUS_CODE } from '@src/utils/constants';
 import { Document, SchemaDefinition, SchemaTypes } from 'mongoose';
-import { STATUS_CODE } from 'utils/constants';
 
 const UserSchemaName = 'users';
 
@@ -12,24 +12,24 @@ export interface IModelBase extends Document {
   updatedAt: Date;
 }
 
-export function SchemaBase(schema: SchemaDefinition) {
-  const defaultSchema: SchemaDefinition = {
-    status: {
-      type: String,
-      enum: STATUS_CODE,
-      required: true,
-      default: STATUS_CODE.ACTIVE,
-    },
-    createdBy: {
-      type: SchemaTypes.ObjectId,
-      ref: UserSchemaName,
-    },
-    updatedBy: {
-      type: SchemaTypes.ObjectId,
-      ref: UserSchemaName,
-    },
-  };
+const defaultSchema = {
+  status: {
+    type: String,
+    enum: STATUS_CODE,
+    required: true,
+    default: STATUS_CODE.ACTIVE,
+  },
+  createdBy: {
+    type: SchemaTypes.ObjectId,
+    ref: UserSchemaName,
+  },
+  updatedBy: {
+    type: SchemaTypes.ObjectId,
+    ref: UserSchemaName,
+  },
+};
 
+export function schemaBase(schema: any) {
   return {
     ...schema,
     ...defaultSchema,

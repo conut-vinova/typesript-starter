@@ -1,9 +1,9 @@
-import { IRequest } from 'base';
-import { User } from 'database/models';
-import { CustomError } from 'errors/base.error';
+import { IRequest } from '@src/base';
+import { User } from '@src/database/models';
+import { CustomError } from '@src/errors/base.error';
+import { STATUS_CODE } from '@src/utils/constants';
+import { verifyToken } from '@src/utils/functions';
 import { NextFunction, Response } from 'express';
-import { STATUS_CODE } from 'utils/constants';
-import { verifyToken } from 'utils/functions';
 
 export const authen = async (req: IRequest, res: Response, next: NextFunction) => {
   const tokenFromClient = req.headers['authorization'];

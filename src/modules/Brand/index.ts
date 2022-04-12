@@ -1,6 +1,6 @@
-import { ServiceContainer } from 'base/container.base';
+import { ServiceContainer } from '@src/base';
+import { validate } from '@src/middlewares';
 import express, { Application } from 'express';
-import { validate } from 'middlewares';
 import { BrandController } from './brand.controller';
 import * as validators from './brand.validator';
 import { UserRoute } from './User';
