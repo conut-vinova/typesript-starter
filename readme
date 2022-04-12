@@ -1,24 +1,12 @@
 <div align="center">
-  <h1>Daily API V2</h1>
-  <strong>Provide the daily.dev feed and engagement layer</strong>
+  <h1>API V1</h1>
+  <strong>CODE BASE TYPESCRIPT</strong>
 </div>
 <br>
-<p align="center">
-  <a href="https://circleci.com/gh/dailydotdev/daily-api">
-    <img src="https://img.shields.io/circleci/build/github/dailydotdev/daily-api/master.svg" alt="Build Status">
-  </a>
-  <a href="https://github.com/dailydotdev/daily-api/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/dailydotdev/daily-api.svg" alt="License">
-  </a>
-  <a href="https://stackshare.io/daily/daily">
-    <img src="http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat" alt="StackShare">
-  </a>
-</p>
 
-The project started as a monolith service for everything the extension needed (thus Daily API).
-Safely and slowly it was tore apart to other services to make every service has only one responsibility.
-The so called Daily API kept to itself the content domain. The feed you know very well is delivered from here,
-along with other very useful endpoints.
+## Architecture
+
+PORTS & ADAPTERS ARCHITECTURE, Hexagonal Architecture,
 
 ## Stack
 

@@ -2,7 +2,7 @@ import { globalErrorHandler } from 'base';
 import { ServiceContainer } from 'base/container.base';
 import compression from 'compression';
 import cors from 'cors';
-import { NotFoundError } from 'errors/notFound.err';
+import { CustomError } from 'errors/base.error';
 import express, { Application } from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
@@ -27,7 +27,7 @@ export class AppSrv {
     user.init(appSrv, this.container);
 
     appSrv.all('*', (req, res, next) => {
-      next(new NotFoundError());
+      next(CustomError.NotFound());
     });
     appSrv.use(globalErrorHandler);
   }

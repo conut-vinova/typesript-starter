@@ -9,7 +9,7 @@ const USER_URL = '/brand/:brandId/users';
 
 export function init(server: Application, container: ServiceContainer) {
   const BrandRoute = express.Router();
-  const controller = new BrandController(container.brand);
+  const controller = new BrandController(container.managers.brand);
 
   BrandRoute.use(USER_URL, UserRoute);
   BrandRoute.get(

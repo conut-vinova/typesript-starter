@@ -1,4 +1,4 @@
-import { AppError } from './base.error';
+import { CustomError } from './base.error';
 
 export interface FieldError {
   message: string;
@@ -6,7 +6,7 @@ export interface FieldError {
   path: string[];
 }
 
-export class FieldValidationError extends AppError {
+export class FieldValidationError extends CustomError {
   public fields: FieldError[];
 
   constructor(message: string, fields: FieldError[], error?: Error) {

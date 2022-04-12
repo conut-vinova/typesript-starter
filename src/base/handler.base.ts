@@ -1,5 +1,4 @@
-import { AppError } from 'errors/base.error';
-import { JWTError, JWTExpiredError } from 'errors/jwt.error';
+import { CustomError } from 'errors/base.error';
 import { NextFunction, Response } from 'express';
 import { IRequest, PaginationParams } from './interface.base';
 
@@ -27,7 +26,7 @@ const sendErrorProd = (err: any, req: IRequest, res: Response) => {
 };
 
 export const globalErrorHandler = (
-  err: AppError,
+  err: CustomError,
   req: IRequest,
   res: Response,
   next: NextFunction
@@ -41,8 +40,8 @@ export const globalErrorHandler = (
     let error = { ...err };
     error.message = err.message;
 
-    if (error.name === 'JsonWebTokenError') error = new JWTError();
-    if (error.name === 'TokenExpiredError') error = new JWTExpiredError();
+    if (error.name === 'JsonWebTokenError') error = CustomError.InvalidToken();
+    if (error.name === 'TokenExpiredError') error = CustomError.ExpiredToken();
 
     sendErrorProd(error, req, res);
   }

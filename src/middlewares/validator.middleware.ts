@@ -1,5 +1,5 @@
 import { IRequest } from 'base';
-import { FieldValidationError } from 'errors/validation.err';
+import { FieldValidationError } from 'errors/validation.error';
 import { NextFunction, Response } from 'express';
 import * as Joi from 'joi';
 
@@ -12,7 +12,6 @@ export interface SchemaMap {
 
 export function validate(schema: SchemaMap) {
   return async (req: IRequest, res: Response, next: NextFunction) => {
-    // const value = req[]
     const valResult = Joi.validate(req, schema, {
       allowUnknown: true,
       abortEarly: false,

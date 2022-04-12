@@ -1,11 +1,17 @@
 import { GeneralObject, ListResponse } from 'base';
 import { IUser } from 'database/models';
+import { Authenticator } from 'services/authentication';
+import { Hasher } from 'services/hasher';
 import { UserRepository } from './user.repo';
 
 export class UserManager {
   private readonly repoUser: UserRepository;
-  constructor(repoUser: UserRepository) {
+  private readonly hasher: Hasher;
+  private readonly auth: Authenticator;
+  constructor(repoUser: UserRepository, hasher: Hasher, auth: Authenticator) {
     this.repoUser = repoUser;
+    this.hasher = hasher;
+    this.auth = auth;
   }
 
   public async getUserList(query: GeneralObject): Promise<ListResponse<IUser>> {

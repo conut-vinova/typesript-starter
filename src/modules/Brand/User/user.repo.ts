@@ -1,7 +1,7 @@
 import { DetailResponse, GeneralObject, ListResponse } from 'base';
 import { IUser } from 'database/models';
 import * as mongoose from 'mongoose';
-import { STATUS_CODE } from 'utils';
+import { STATUS_CODE } from 'utils/constants';
 
 export class UserRepository {
   private readonly model: mongoose.Model<IUser>;

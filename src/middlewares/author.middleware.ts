@@ -1,5 +1,5 @@
 import { IRequest } from 'base';
-import { PermissionError } from 'errors/auth.error';
+import { CustomError } from 'errors/base.error';
 import { NextFunction, Response } from 'express';
 
 export const author = (...permittedRoles: string[]) => {
@@ -8,7 +8,7 @@ export const author = (...permittedRoles: string[]) => {
     if (role && permittedRoles.includes(role)) {
       next();
     } else {
-      return next(new PermissionError());
+      return next(CustomError.Forbidden());
     }
   };
 };

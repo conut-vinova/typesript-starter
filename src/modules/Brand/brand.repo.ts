@@ -1,7 +1,7 @@
 import { DetailResponse, GeneralObject, ListResponse } from 'base';
 import { IBrand } from 'database/models';
 import * as mongoose from 'mongoose';
-import { STATUS_CODE } from 'utils';
+import { STATUS_CODE } from 'utils/constants';
 
 export class BrandRepository {
   private readonly model: mongoose.Model<IBrand>;
